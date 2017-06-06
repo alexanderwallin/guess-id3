@@ -1,0 +1,36 @@
+{
+  "name": "guess-idv3",
+  "version": "0.1.0",
+  "description": "Extracts artist name and song title from filenames and writes them as IDv3 to those files",
+  "main": "dist/index.js",
+  "bin": "dist/cli.js",
+  "dependencies": {
+    "browser-id3-writer": "^3.0.3",
+    "glob-all": "^3.1.0",
+    "minimist": "^1.2.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.4.2",
+    "rollup": "^0.42.0",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-watch": "^4.0.0"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "dev": "rollup --config --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexanderwallin/guess-idv3.git"
+  },
+  "keywords": [
+    "id3",
+    "mp3"
+  ],
+  "author": "Alexander Wallin <office@alexanderwallin.com> (http://alexanderwallin.com)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/alexanderwallin/guess-idv3/issues"
+  },
+  "homepage": "https://github.com/alexanderwallin/guess-idv3#readme"
+}
