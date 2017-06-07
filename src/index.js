@@ -49,9 +49,11 @@ export default function guessId3(filenamePattern, options) {
 }
 
 function extractSongInfoFromFilename(filename) {
-  const [artist, title] = path
+  const [artist, ...titleParts] = path
     .basename(filename)
     .replace(/\.\w+$/, '')
     .split(/\s-\s/)
+  const title = titleParts.join(' - ')
+
   return { artist, title }
 }
