@@ -1,6 +1,6 @@
 {
   "name": "guess-idv3",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Extracts artist name and song title from filenames and writes them as IDv3 to those files",
   "main": "dist/index.js",
   "bin": "dist/cli.js",
