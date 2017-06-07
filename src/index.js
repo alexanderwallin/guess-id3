@@ -35,6 +35,7 @@ export default function guessId3(filenamePattern, options) {
           const writer = new ID3Writer(fileContents)
           writer.setFrame('TIT2', title)
           writer.setFrame('TPE2', artist)
+          writer.setFrame('TPE1', [artist])
           writer.addTag()
 
           const taggedSongBuffer = Buffer.from(writer.arrayBuffer)
