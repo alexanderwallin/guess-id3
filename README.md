@@ -37,7 +37,7 @@ guessId3('music/**/*.mp3', { dry: false, verbose: false }).then(() => {
 
 ### `guessId3(glob, options)`
 
-Overwrites all files matched by `glob` with a buffer that contains ID3 metadata. The data is extracted from a file's name, splitting it on ` - `.  As an example, the filename `Artist Name - Song Title.mp3` gives `{ artist: 'Artist Name', title: 'Song Title' }`.
+Overwrites all files matched by `glob` with a buffer that contains ID3 metadata. The data is extracted from a file's name using [`guess-metadata`](https://www.npmjs.com/package/guess-metadata).  As an example, the filename `Artist Name - Song Title.mp3` gives `{ artist: 'Artist Name', title: 'Song Title' }`.
 
 * `glob` - A glob accepted by [`glob-all`](https://www.npmjs.com/package/glob-all).
 * `options`
