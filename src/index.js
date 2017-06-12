@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import glob from 'glob-all'
 import ID3Writer from 'browser-id3-writer'
+import guessMetadata from 'guess-metadata'
 
 const defaultOpts = {
   dry: false,
@@ -17,9 +18,10 @@ export default function guessId3(filenamePattern, options) {
   }
 
   return Promise.all(
-    files.map(filename => {
+    files.map(filePath => {
       return new Promise((resolve, reject) => {
-        const { artist, title } = extractSongInfoFromFilename(filename)
+        const filename = path.basename(filePath, path.extname(filePath))
+        const { artist, title } = guessMetadata(filename)
 
         if (mergedOpts.dry === true) {
           console.log(filename, '->', { artist, title })
@@ -46,14 +48,4 @@ export default function guessId3(filenamePattern, options) {
       })
     })
   )
-}
-
-function extractSongInfoFromFilename(filename) {
-  const [artist, ...titleParts] = path
-    .basename(filename)
-    .replace(/\.\w+$/, '')
-    .split(/\s-\s/)
-  const title = titleParts.join(' - ')
-
-  return { artist, title }
 }

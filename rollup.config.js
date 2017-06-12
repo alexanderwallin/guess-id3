@@ -2,10 +2,10 @@ import commonJS from 'rollup-plugin-commonjs'
 
 const externalModules = [
   'fs',
-  'path',
   'glob-all',
   'browser-id3-writer',
   'minimist',
+  'guess-metadata',
 ]
 
 export default [
